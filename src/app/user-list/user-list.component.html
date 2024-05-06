@@ -1,0 +1,38 @@
+<div class="container-fluid py-5">
+    <div class="container py-5">
+      <table class="table">
+        <thead>
+          <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Surname</td>
+            <td>Email</td>
+            <td>Password</td>
+            <td>Show</td>
+            <td>delete</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of users; let i = index;">
+            <td>{{ e.id }}</td>
+            <td>{{ e.name }}</td>
+            <td>{{ e.surname }}</td>
+            <td>{{ e.email }}</td>
+            <td>{{ e.password }}</td>
+            <td><a href="/user-list">Show</a></td>
+            <td><button (click)="delete(e.id)">Delete</button></td>
+            <td>
+            </td>
+            <td>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="/user-add" >Create</a>
+      <hr>
+    </div>
+  </div>
+  
+
+  

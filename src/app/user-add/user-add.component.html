@@ -1,0 +1,25 @@
+<form [formGroup]=form_group>
+  Id: <input (input)="check()"formControlName=id type="text">
+  <div *ngIf="form_group.get('id')?.hasError('required')">*Required*</div>
+  <br/>
+  Name: <input (input)="check()"formControlName=name type="text">
+  <div *ngIf="form_group.get('name')?.hasError('required')">*Required*</div>
+  <div *ngIf="form_group.get('name')?.hasError('pattern')">*Pattern*</div>
+  <br/>
+
+  Surname: <input (input)="check()"formControlName=surname type="text">
+  <div *ngIf="form_group.get('surname')?.hasError('required')">*Required*</div>
+  <div *ngIf="form_group.get('surname')?.hasError('maxlength')">*Length*</div>
+  <br/>
+
+  Email: <input (input)="check()" formControlName=email type="text">
+  <div *ngIf="form_group.get('email')?.hasError('required')">*Required*</div>
+  <div *ngIf="form_group.get('email')?.hasError('email')">*Email*</div>
+  <br/>
+
+  Password: <input (input)="check()"formControlName=password type="password">
+  <div *ngIf="form_group.get('password')?.hasError('required')">*Required*</div>
+  <div *ngIf="form_group.get('password')?.hasError('pattern')">*pattern*</div>
+  <br/>
+  <input [disabled]=disabled (click)="create()"type="submit" value="Submit"/>
+</form>
